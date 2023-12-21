@@ -1,0 +1,56 @@
+{% extends 'admin.html' %}
+
+
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- jquery validation -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            {% for i in edit %}
+            <form action="{% url 'update' i.id %}" method="post" id="quickForm">
+                {% csrf_token %}
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">NAME</label><br>
+                  <input type="text" name="name" class="name" id="name" value="{{i.name}}" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">TYPE</label><br>
+                  <input type="text" name="type" class="type" id="type" value="{{i.type}}" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">PRICE</label><br>
+                    <input type="text" name="price" class="price" id="price" value="{{i.price}}" placeholder="">
+                  </div>
+                
+                
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            {% endfor %}
+          </div>
+          <!-- /.card -->
+          </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  
+{% endblock %}

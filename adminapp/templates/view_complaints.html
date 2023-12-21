@@ -1,0 +1,59 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>DataTables</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">DataTables</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title"></h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                <th>NAME</th>
+                <th>EMAIl </th>
+                <th>SUBJECT</th>
+                <th>MESSAGE</th>
+              
+              </tr>
+              </thead>
+             <tbody>
+             {% for i in complaints %}
+            <tr>
+              <td>{{i.name}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.subject}}</td>
+              <td>{{i.message}}</td>
+          
+              
+            </tr>
+
+             {% endfor %}
+            </table>
+         
+</section>
+</body>
+{% endblock %}
+</html>
+
